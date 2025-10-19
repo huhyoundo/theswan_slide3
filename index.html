@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #12161c 0%, #080a0d 62%, #030405 100%);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    swiper-container {
+      width: min(92vw, 1400px);
+      aspect-ratio: 16 / 9;
+      max-height: 92vh;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 32px 120px rgba(0, 0, 0, 0.55);
+    }
+
+    swiper-slide {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      background: linear-gradient(90deg,
+          color-mix(in srgb, var(--gradient-left, #27313a) 78%, #ffffff 22%) 0%,
+          color-mix(in srgb, var(--gradient-center, var(--gradient-left, #27313a)) 70%, #ffffff 30%) 52%,
+          color-mix(in srgb, var(--gradient-right, #171d22) 78%, #ffffff 22%) 100%));
+    }
+
+    swiper-slide::before,
+    swiper-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    swiper-slide::before {
+      background:
+        radial-gradient(ellipse at left center, var(--gradient-glow-left, rgba(255, 255, 255, 0.12)) 0%, rgba(255, 255, 255, 0) 60%),
+        radial-gradient(ellipse at right center, var(--gradient-glow-right, rgba(16, 24, 32, 0.5)) 0%, rgba(16, 24, 32, 0) 70%);
+      mix-blend-mode: lighten;
+    }
+
+    swiper-slide::after {
+      background:
+        linear-gradient(90deg, rgba(8, 12, 18, 0.4) 0%, rgba(8, 12, 18, 0) 18%, rgba(8, 12, 18, 0) 82%, rgba(8, 12, 18, 0.4) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0) 32%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, 0.22) 100%);
+    }
+
+    swiper-slide img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
+    }
+
+    swiper-container::part(pagination) {
+      bottom: 34px;
+    }
+
+    swiper-container::part(bullet) {
+      background: rgba(0, 180, 195, 0.32);
+      width: 10px;
+      height: 10px;
+    }
+
+    swiper-container::part(bullet-active) {
+      background: #00c4d6;
+      width: 18px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <swiper-container class="mySwiper" init="false" pagination="true" pagination-dynamic-bullets="true">
+    <swiper-slide style="--gradient-left:#202730; --gradient-center:#2d3a44; --gradient-right:#161c21; --gradient-glow-left:rgba(204, 214, 222, 0.28); --gradient-glow-right:rgba(58, 72, 82, 0.32);">
+      <img src="jpg/Blind Debossing Texture.jpeg" alt="Blind Debossing Texture" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#4b3a40; --gradient-center:#705a60; --gradient-right:#2a2225; --gradient-glow-left:rgba(250, 232, 233, 0.26); --gradient-glow-right:rgba(104, 74, 83, 0.32);">
+      <img src="jpg/Branded Tissue Paper Detail.jpeg" alt="Branded Tissue Paper Detail" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#18313f; --gradient-center:#345766; --gradient-right:#0d1d25; --gradient-glow-left:rgba(204, 232, 243, 0.24); --gradient-glow-right:rgba(32, 82, 110, 0.34);">
+      <img src="jpg/Clean Academic Archive.png" alt="Clean Academic Archive" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#4c3a30; --gradient-center:#8a6a57; --gradient-right:#2b1f19; --gradient-glow-left:rgba(246, 228, 206, 0.3); --gradient-glow-right:rgba(120, 83, 62, 0.32);">
+      <img src="jpg/Debossed Luxury Stationery.jpeg" alt="Debossed Luxury Stationery" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#0f4354; --gradient-center:#1d7186; --gradient-right:#092832; --gradient-glow-left:rgba(177, 233, 234, 0.24); --gradient-glow-right:rgba(40, 124, 140, 0.32);">
+      <img src="jpg/Debossed Medical Packaging.jpeg" alt="Debossed Medical Packaging" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#020d1f; --gradient-center:#0a2a4a; --gradient-right:#15529a;">
+      <img src="jpg/Deep Blue Assortment.png" alt="Deep Blue Assortment" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#281a1a; --gradient-center:#4c2d29; --gradient-right:#6e4639;">
+      <img src="jpg/Elegant Serif Typography.jpeg" alt="Elegant Serif Typography" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#10212c; --gradient-center:#243c4b; --gradient-right:#4f6c83;">
+      <img src="jpg/Embroidered Pouch Text.jpeg" alt="Embroidered Pouch Text" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#5a4033; --gradient-center:#a4795a; --gradient-right:#3a261c; --gradient-glow-left:rgba(251, 232, 205, 0.34); --gradient-glow-right:rgba(155, 107, 72, 0.35);">
+      <img src="jpg/Envelope with Custom Seal Sticker.jpeg" alt="Envelope with Custom Seal Sticker" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#0a1723; --gradient-center:#20364a; --gradient-right:#476a86;">
+      <img src="jpg/Etched Acrylic Text.jpeg" alt="Etched Acrylic Text" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#10151b; --gradient-center:#232d37; --gradient-right:#42535f;">
+      <img src="jpg/Freestanding Academic Lecterns.jpeg" alt="Freestanding Academic Lecterns" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#201006; --gradient-center:#412712; --gradient-right:#8f6328;">
+      <img src="jpg/Gold Foil Typography.jpeg" alt="Gold Foil Typography" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#0d2127; --gradient-center:#264c57; --gradient-right:#5d8d97;">
+      <img src="jpg/Luxury Ointment Mockup.jpeg" alt="Luxury Ointment Mockup" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#d9d3c8; --gradient-center:#f4eee4; --gradient-right:#c0b4a5; --gradient-glow-left:rgba(255, 249, 239, 0.45); --gradient-glow-right:rgba(168, 132, 92, 0.28);">
+      <img src="jpg/Luxury Stationery Showcase.jpeg" alt="Luxury Stationery Showcase" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#012127; --gradient-center:#01505c; --gradient-right:#0d828a;">
+      <img src="jpg/Luxury Teal Envelope.png" alt="Luxury Teal Envelope" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#053337; --gradient-center:#19676a; --gradient-right:#3ea7a5;">
+      <img src="jpg/Luxury Turquoise Leather Pouch.jpeg" alt="Luxury Turquoise Leather Pouch" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#6a4b32; --gradient-center:#a97a4d; --gradient-right:#3c2818; --gradient-glow-left:rgba(253, 226, 189, 0.42); --gradient-glow-right:rgba(170, 120, 69, 0.34);">
+      <img src="jpg/Luxury Wax Seal Kit.jpeg" alt="Luxury Wax Seal Kit" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#2a2f34; --gradient-center:#4a545c; --gradient-right:#14181b; --gradient-glow-left:rgba(216, 222, 226, 0.24); --gradient-glow-right:rgba(58, 66, 72, 0.32);">
+      <img src="jpg/Marble Coaster Set.jpeg" alt="Marble Coaster Set" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#111520; --gradient-center:#2a354a; --gradient-right:#4d5e77;">
+      <img src="jpg/Matte White Skincare Bottle.jpeg" alt="Matte White Skincare Bottle" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#675444; --gradient-center:#a48a74; --gradient-right:#3c2f24; --gradient-glow-left:rgba(250, 229, 206, 0.38); --gradient-glow-right:rgba(156, 119, 90, 0.34);">
+      <img src="jpg/Minimalist Invitation Card.jpeg" alt="Minimalist Invitation Card" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#353a42; --gradient-center:#59626c; --gradient-right:#161a1e; --gradient-glow-left:rgba(215, 225, 233, 0.24); --gradient-glow-right:rgba(77, 92, 108, 0.3);">
+      <img src="jpg/Minimalist Packaging Idea.jpeg" alt="Minimalist Packaging Idea" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#061623; --gradient-center:#1f3547; --gradient-right:#3f5e75;">
+      <img src="jpg/Minimalist Swan Etching.png" alt="Minimalist Swan Etching" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#011926; --gradient-center:#0e3f56; --gradient-right:#107085;">
+      <img src="jpg/Minimalist Swan Stationery - Branded.png" alt="Minimalist Swan Stationery Branded" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#655243; --gradient-center:#a3886e; --gradient-right:#3b2c1f; --gradient-glow-left:rgba(251, 230, 203, 0.4); --gradient-glow-right:rgba(175, 129, 86, 0.34);">
+      <img src="jpg/Minimalist White Space, Gold Accent.jpeg" alt="Minimalist White Space with Gold Accent" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#34373a; --gradient-center:#5d6064; --gradient-right:#141517; --gradient-glow-left:rgba(229, 231, 231, 0.24); --gradient-glow-right:rgba(84, 87, 90, 0.28);">
+      <img src="jpg/Pristine White Business Cards.jpeg" alt="Pristine White Business Cards" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#1d1617; --gradient-center:#3f292c; --gradient-right:#6b4549;">
+      <img src="jpg/Refined Presentation Box Interior.jpeg" alt="Refined Presentation Box Interior" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#482c2d; --gradient-center:#7f4a4c; --gradient-right:#291314; --gradient-glow-left:rgba(244, 208, 209, 0.32); --gradient-glow-right:rgba(131, 76, 78, 0.34);">
+      <img src="jpg/Refined Script Writing.jpeg" alt="Refined Script Writing" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#1c191d; --gradient-center:#3a353f; --gradient-right:#5f5865;">
+      <img src="jpg/Serif Font Options.jpeg" alt="Serif Font Options" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#10161f; --gradient-center:#283447; --gradient-right:#495c73;">
+      <img src="jpg/Sophisticated Document Holder.jpeg" alt="Sophisticated Document Holder" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#021a25; --gradient-center:#0b4154; --gradient-right:#0f7086;">
+      <img src="jpg/Turquoise Ceramic Pen.png" alt="Turquoise Ceramic Pen" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#032730; --gradient-center:#0d515e; --gradient-right:#1397a3;">
+      <img src="jpg/Turquoise Document Box.jpeg" alt="Turquoise Document Box" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#02252d; --gradient-center:#0d515d; --gradient-right:#118287;">
+      <img src="jpg/Turquoise Silk Eye Mask.png" alt="Turquoise Silk Eye Mask" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#022731; --gradient-center:#0d5663; --gradient-right:#108691;">
+      <img src="jpg/Turquoise Thank You Card.jpeg" alt="Turquoise Thank You Card" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#0a1b23; --gradient-center:#204b57; --gradient-right:#427e89;">
+      <img src="jpg/White Box with Turquoise Ribbon.jpeg" alt="White Box with Turquoise Ribbon" loading="lazy" />
+    </swiper-slide>
+    <swiper-slide style="--gradient-left:#171719; --gradient-center:#333438; --gradient-right:#606369;">
+      <img src="jpg/White Jar with Gold Lid.jpeg" alt="White Jar with Gold Lid" loading="lazy" />
+    </swiper-slide>
+  </swiper-container>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script>
+    const swiperEl = document.querySelector('.mySwiper');
+
+    Object.assign(swiperEl, {
+      loop: true,
+      speed: 700,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      effect: 'slide',
+    });
+
+    swiperEl.initialize();
+
+    let wheelLock = false;
+    const wheelCooldown = 700;
+
+    const handleWheel = (event) => {
+      event.preventDefault();
+      const swiper = swiperEl.swiper;
+      if (!swiper || wheelLock) {
+        return;
+      }
+
+      wheelLock = true;
+      if (event.deltaY > 0) {
+        swiper.slideNext();
+      } else if (event.deltaY < 0) {
+        swiper.slidePrev();
+      }
+
+      setTimeout(() => {
+        wheelLock = false;
+      }, wheelCooldown);
+    };
+
+    swiperEl.addEventListener('wheel', handleWheel, { passive: false });
+
+    swiperEl.addEventListener('swiperinit', () => {
+      if (swiperEl.swiper?.autoplay) {
+        swiperEl.swiper.autoplay.start();
+      }
+    });
+  </script>
+</body>
+
+</html>
