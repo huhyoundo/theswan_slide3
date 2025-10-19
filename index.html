@@ -44,7 +44,6 @@
       gap: 12px;
       padding: 10px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.24);
       background: rgba(12, 16, 22, 0.65);
       color: #f3f5f7;
       font-size: 14px;
@@ -54,7 +53,7 @@
       user-select: none;
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
-      transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
       z-index: 20;
     }
 
@@ -68,7 +67,7 @@
       width: 46px;
       height: 26px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.32);
       transition: background 0.28s ease;
     }
 
@@ -89,13 +88,12 @@
     }
 
     .audio-toggle.is-on {
-      border-color: rgba(0, 196, 214, 0.72);
-      background: rgba(0, 132, 155, 0.36);
+      background: rgba(0, 132, 155, 0.24);
       color: #eafeff;
     }
 
     .audio-toggle.is-on .toggle-track {
-      background: linear-gradient(135deg, #00c4d6 0%, #2cf4bf 100%);
+      background: rgba(0, 196, 214, 0.9);
     }
 
     .audio-toggle.is-on .toggle-thumb {
@@ -151,7 +149,7 @@
 
   <div class="slider-shell">
     <audio id="bgm" muted loop preload="auto" playsinline>
-      <source src="1.MP3" type="audio/mpeg" />
+      <source src="1.mp3" type="audio/mpeg" />
       <source src="1.WEBM" type="audio/webm" />
     </audio>
 
