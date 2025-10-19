@@ -35,13 +35,8 @@
       display: none;
     }
 
-    .slider-shell {
-      position: relative;
-      display: inline-block;
-    }
-
     .audio-toggle {
-      position: absolute;
+      position: fixed;
       top: 24px;
       right: 24px;
       display: flex;
@@ -167,7 +162,7 @@
       <span class="toggle-label">BGM</span>
     </button>
 
-    <swiper-container class="mySwiper" init="false" pagination="true" pagination-dynamic-bullets="true">
+  <swiper-container class="mySwiper" init="false" pagination="true" pagination-dynamic-bullets="true">
       <swiper-slide><img src="jpg/1.jpg" alt="Slide 1" loading="lazy" /></swiper-slide>
     <swiper-slide><img src="jpg/2.jpg" alt="Slide 2" loading="lazy" /></swiper-slide>
     <swiper-slide><img src="jpg/3.jpg" alt="Slide 3" loading="lazy" /></swiper-slide>
@@ -206,7 +201,7 @@
       <swiper-slide><img src="jpg/41.jpg" alt="Slide 36" loading="lazy" /></swiper-slide>
       <swiper-slide><img src="jpg/42.jpg" alt="Slide 37" loading="lazy" /></swiper-slide>
       <swiper-slide><img src="jpg/43.jpg" alt="Slide 38" loading="lazy" /></swiper-slide>
-    </swiper-container>
+  </swiper-container>
   </div>
 
 
